@@ -71,9 +71,6 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 exc = {<span class="string">'_site'</span>,<span class="string">'.git'</span>,<span class="string">'*~'</span>,<span class="string">'.'</span>,<span class="string">'..'</span>,<span class="string">'.gitignore'</span>,<span class="string">'ZipSkeleton.m~'</span>,<span class="string">'ZipSkeleton.m'</span>};
 zipfiles = {fn( find(~ismember( {fn.name}, exc ))).name};
 </pre><h2>Wrap up all the files into a *.zip file<a name="2"></a></h2><pre class="codeinput">zip(<span class="string">'jekyll-skeleton.zip'</span>,zipfiles);
-</pre><pre class="codeoutput">Warning: ZIP cannot add the archive file:
-C:\Users\Tony\Documents\MATLAB\git-out-there-little-star\jekyll-skeleton.zip to
-the archive file itself. 
 </pre><h2>Visualization files<a name="3"></a></h2><p>And plot a picture for illustraction</p><pre class="codeinput">peaks(10);
 snapnow
 </pre><pre class="codeoutput"> 
