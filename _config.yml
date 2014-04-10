@@ -1,5 +1,5 @@
 name: My Jekyll Skeleton
 markdown: redcarpet
 pygments: true
-baseurl: /jekyll-skeleton
+baseurl: /git-out-there-little-star
 imgbase: /assets
