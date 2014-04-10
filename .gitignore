@@ -6,3 +6,6 @@ _site
 
 # Autosave files
 *~
+
+# Ignore the Skeleton zip
+jekyll-skeleton.zip
