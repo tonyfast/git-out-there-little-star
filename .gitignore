@@ -1,0 +1,8 @@
+_site
+
+# Matlab files to ignore
+*.m
+*.mat
+
+# Autosave files
+*~
