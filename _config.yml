@@ -2,3 +2,4 @@ name: My Jekyll Skeleton
 markdown: redcarpet
 pygments: true
 baseurl: /jekyll-skeleton
+imgbase: /assets

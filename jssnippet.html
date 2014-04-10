@@ -1,0 +1,21 @@
+<!-- Javascript snippet to change image paths to correspind with Matlab's publish setting -->
+<script type="text/javascript">
+function swapSrc( baseurl, imgurl ) {
+    // Get all images on the document
+    var images = document.getElementsByTagName('img');
+
+    // Count the number of image elements and switch alt and src
+    var i = images.length;
+    while (i--) {
+        images[i].src =  baseurl + imgurl + "/" + 
+        images[i].src.split('/').slice(-1)[0];
+    }
+};
+</script>
+
+
+<!-- Usage
+
+<body onload="swapSrc('{{site.baseurl}}', '{{site.imgbase}}')">
+
+-->

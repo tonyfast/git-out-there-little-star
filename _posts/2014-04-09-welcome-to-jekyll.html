@@ -22,3 +22,19 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 
 [jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]:    http://jekyllrb.com
+
+<img src='pic.jpg'></img>
+
+<script type="text/javascript">
+var switchAlt = function( basurl, imgbase ) {
+    // Get all images on the document
+    var images = document.getElementsByTagName('img');
+
+    // Count the number of image elements and switch alt and src
+    var i = images.length;
+    while (i--) {
+        images[i].alt = baseurl + imgbase  + "/" + 
+        images[i].src.split('/').slice(-1)[0];
+    }
+}();
+</script>
