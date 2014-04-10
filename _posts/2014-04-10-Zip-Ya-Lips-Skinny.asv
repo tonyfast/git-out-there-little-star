@@ -1,5 +1,5 @@
 ---
-layout: post
+layout:post
 ---
 
 <!DOCTYPE html
@@ -68,7 +68,8 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script><body onload="swapSrc('{{site.baseurl}}','{{site.imgbase}}')"><div class="content"><h1>Zip Skeleton</h1><!--introduction--><p>Zip up a the files necessary to make a modified Jekyll template to publish Matlab scripts to Github pages.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">The files to include and exclude in the zip file</a></li><li><a href="#2">Wrap up all the files into a *.zip file</a></li><li><a href="#3">Visualization files</a></li></ul></div><h2>The files to include and exclude in the zip file<a name="1"></a></h2><pre class="codeinput">fn = dir(<span class="string">'.'</span>);
+  </style></head><script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script>
+  <body onload="swapSrc('{{site.baseurl}}','{{site.imgbase}}')"><div class="content"><h1>Zip Skeleton</h1><!--introduction--><p>Zip up a the files necessary to make a modified Jekyll template to publish Matlab scripts to Github pages.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">The files to include and exclude in the zip file</a></li><li><a href="#2">Wrap up all the files into a *.zip file</a></li><li><a href="#3">Visualization files</a></li></ul></div><h2>The files to include and exclude in the zip file<a name="1"></a></h2><pre class="codeinput">fn = dir(<span class="string">'.'</span>);
 
 <span class="comment">% exclude files in zip</span>
 exc = {<span class="string">'_site'</span>,<span class="string">'.git'</span>,<span class="string">'*~'</span>,<span class="string">'.'</span>,<span class="string">'..'</span>,<span class="string">'.gitignore'</span>,<span class="string">'ZipSkeleton.m~'</span>,<span class="string">'ZipSkeleton.m'</span>};

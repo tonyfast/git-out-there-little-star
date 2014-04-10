@@ -22,7 +22,7 @@ to_file = fullfile( '_posts', sprintf( '%04i-%02i-%02i-%s.html', timenow(1), tim
 fto = fopen( to_file ,'w');
 
 % Add the YAML front matter
-fprintf( fto, '---\nlayout:post\n---\n' );
+fprintf( fto, '---\nlayout: post\n---\n' );
 
 % Insert a javascript to reorganize image paths
 fprintf( fto,'%s\n', regexprep( fileread(fmatpub), '<body>', ...
@@ -32,4 +32,4 @@ fprintf( fto,'%s\n', regexprep( fileread(fmatpub), '<body>', ...
 fclose(fto);
 
 disp( 'Your Matlab script has been published.  It can now be hosted as a stand-alone page or a blog posting using Jekyll templates.')
-disp( 'Please review you recent publication and push it to Github for the world to see.' );
+disp( 'Please review you recent publication and push it to Github for the world to see.  You will need to add the /assets and /_posts folder to your commit.' );
