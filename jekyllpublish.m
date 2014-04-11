@@ -58,7 +58,7 @@ to_file = fullfile( '_posts', sprintf( '%04i-%02i-%02i-%s.html', timenow(1), tim
 fto = fopen( to_file ,'w');
 
 % Add the YAML front matter
-fprintf( fto, '---\nlayout: post\ntitle: %s---\n', regexprep( postname,'-',' ') );
+fprintf( fto, '---\nlayout: post\ntitle: %s\n---\n', regexprep( postname,'-',' ') );
 
 
 WebDat = fileread(fmatpub);
