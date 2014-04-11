@@ -64,6 +64,10 @@ fprintf( fto, '---\nlayout: post\ntitle: %s---\n', regexprep( postname,'-',' ') 
 WebDat = fileread(fmatpub);
 WebDat = regexprep( WebDat, '<body>', ...
     '<script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script><body onload="swapSrc(''{{site.baseurl}}'',''{{site.imgbase}}'')">') ;
+WebDat = regexprep( WebDat, '.content { font-size:1.2em; line-height:140%; padding: 20px; }', ...
+    '.content { font-size:1.2em; line-height:140%; padding: 0px; }') ;
+
+
 if numel( param.disqus ) > 0
     WebDat = regexprep( WebDat, '</body>', '' );
     WebDat = regexprep( WebDat, '</html>', '' );
