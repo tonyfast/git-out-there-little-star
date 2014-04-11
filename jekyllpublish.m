@@ -4,11 +4,22 @@ function to_file = jekyllpublish( postname, varargin )
 
 %% Examples
 %
+% jekyllpublish('Post-Title', 'script_name.m' )
+%
 % jekyllpublish('Zip-Ya-Lips-Skinny', 'ZipSkeleton.m' ) - Publish a post with the
-% title 'Example Post' which is the published version of ZipSkeleton.m
+% title 'Zip Ya Lips Skinny' is the title of the post for the file sZipSkeleton.m
 %
 % jekyllpublish('Example-Post', varargin )- varargin obeys the Matlab
 % published syntax starting from the first argument.
+%
+% Additional Parameters 
+% 
+% 'DisqusOn' adds a disqus comment widget at the bottom of your Jekyll
+% page.  Go to disqus.com to sign up and remember your user name.
+%
+% jekyllpublish('Zip-Ya-Lips-Skinny', 'ZipSkeleton.m', 'DisqusOn',
+% 'tonyfast' ) creates a webpage with Disqus comments attached to the
+% username "tonyfast"
 
 %% Set parameters
 
@@ -47,12 +58,16 @@ to_file = fullfile( '_posts', sprintf( '%04i-%02i-%02i-%s.html', timenow(1), tim
 fto = fopen( to_file ,'w');
 
 % Add the YAML front matter
-fprintf( fto, '---\nlayout: post\n---\n' );
+fprintf( fto, '---\nlayout: post\ntitle: %s---\n', regexprep( postname,'-',' ') );
 
 
 WebDat = fileread(fmatpub);
 WebDat = regexprep( WebDat, '<body>', ...
     '<script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script><body onload="swapSrc(''{{site.baseurl}}'',''{{site.imgbase}}'')">') ;
+WebDat = regexprep( WebDat, '.content { font-size:1.2em; line-height:140%; padding: 20px; }', ...
+    '.content { font-size:1.2em; line-height:140%; padding: 0px; }') ;
+
+
 if numel( param.disqus ) > 0
     WebDat = regexprep( WebDat, '</body>', '' );
     WebDat = regexprep( WebDat, '</html>', '' );
