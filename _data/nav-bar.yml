@@ -4,6 +4,6 @@ brand:
     ref: "site.baseurl/index.html"
 pages:
   - name: Datasets
-    ref: "site.baseurl/dataset-index.html"
+    ref: "site.baseurl/views/dataset-index.html"
   - name: Reports
-    ref: "site.baseurl/report-index.html"
+    ref: "site.baseurl/views/report-index.html"
