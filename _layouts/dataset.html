@@ -6,6 +6,10 @@ layout: bootstrap
 <!-- Precompile the variable names 
 I need to get the unique variables from the matlab execution cause its easier
 -->
+<div class="alert alert-success">
+    <h1>{{page.title | default:'This dataset has not been titled yet.' }}</h1>
+</div>
+
 
 {% include datatable.html %}
 

@@ -3,11 +3,7 @@ brand:
     name: "Git-Out-There-Little-Star"
     ref: "site.baseurl/index.html"
 pages:
-  - name: Posts
-    ref: "site.baseurl/post-index.html"
+  - name: Datasets
+    ref: "site.baseurl/dataset-index.html"
   - name: Reports
     ref: "site.baseurl/report-index.html"
-  - name: Reports
-    ref: "site.baseurl/report-index.html"
-  - name: Featured
-    ref: http://www.google.com
