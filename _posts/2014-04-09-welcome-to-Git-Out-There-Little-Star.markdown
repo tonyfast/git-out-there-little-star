@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: bootstrap
 title:  "Welcome to Git Out There Little Star!"
 date:   2014-04-09 22:25:24
 tags: rapid publish data metadata
