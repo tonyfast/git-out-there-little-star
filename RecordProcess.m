@@ -39,7 +39,9 @@ end
 
 %% Execute Process
 
-[ varargout{1:nargout} ] = varargin{1}( varargin{2:lastid} );
+if ~isstruct(varargin{1})
+    [ varargout{1:nargout} ] = varargin{1}( varargin{2:lastid} );
+end
 
 % varargout{1} must be a cell array with elements of structures
 %% Unique Searchable Variables
