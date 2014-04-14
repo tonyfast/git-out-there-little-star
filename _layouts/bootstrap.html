@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+        
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{{site.baseurl}}/css/bootstrap.min.css">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="{{site.baseurl}}/css/bootstrap-theme.min.css">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script>
+    </head>
+    
+    {% include nav-bar.html %}
+    
+    <body onload="swapSrc('{{site.url}}','{{site.baseurl}}','{{site.imgbase}}')">
+        
+        
+        
+        {{content}}
+        
+    </body>
+    
+    
+</html>
