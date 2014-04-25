@@ -1,4 +1,4 @@
-function to_file = jekyllpublish( postname, varargin )
+function to_file = jekyllpublish( varargin )
 % Publish html versions of matlab scripts using the Jekyll interpreter on
 % Github pages.
 
@@ -23,12 +23,14 @@ function to_file = jekyllpublish( postname, varargin )
 
 %% Set parameters
 
-param = struct( 'disqus','' );
-keys = {'DisqusOn'};
+param = struct( 'disqus','','title',sprintf('Dataset%i', round(1e5*rand(1)) ));
+keys = {'DisqusOn','title'};
 for ii = 1 : numel( varargin )
     switch varargin{ii}
         case 'DisqusOn'
             param.disqus = varargin{ii+1};
+        case 'title'
+            param.title = varargin{ii+1};
     end
 end
 
@@ -52,13 +54,13 @@ fmatpub = publish( varargin{:}, 'outputDir', fullfile('.','assets') );
 
 % The timestamp is needed for blog-aware features in Jekyll
 timenow = clock;
-to_file = fullfile( '_posts', sprintf( '%04i-%02i-%02i-%s.html', timenow(1), timenow(2), timenow(3), postname ) );
+to_file = fullfile( '_posts', sprintf( '%04i-%02i-%02i-%s.html', timenow(1), timenow(2), timenow(3), param.title ) );
 
 %% Write the new file
 fto = fopen( to_file ,'w');
 
 % Add the YAML front matter
-fprintf( fto, '---\nlayout: report\ntitle: %s\n---\n', regexprep( postname,'-',' ') );
+fprintf( fto, '---\nlayout: report\ntitle: %s\n---\n', regexprep( param.title,'-',' ') );
 
 
 WebDat = fileread(fmatpub);

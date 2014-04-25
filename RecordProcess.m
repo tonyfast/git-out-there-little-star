@@ -14,13 +14,18 @@ fprintf(fo, '---\nlayout: dataset\n');
 %% Function Options
 
 rpopt = {'title'};
+lastid = numel( varargin );
 if nargin > 1
     cid = find( cellfun( @(x)ischar( x ), varargin ) );
     if numel(cid) == 0
         lastid = numel( varargin );
     else
         lastid = find( ismember( {varargin{cid}}, rpopt), 1,'last');
-        lastid = cid(lastid)-1;
+        if numel(lastid) > 0
+            lastid = cid(lastid)-1;
+        else
+            lastid = numel( varargin );
+        end
     end
 else
     lastid = 1;
@@ -41,12 +46,13 @@ end
 
 if ~isstruct(varargin{1})
     [ varargout{1:nargout} ] = varargin{1}( varargin{2:lastid} );
+else
+    varargout = { varargin{1} };
 end
 
 % varargout{1} must be a cell array with elements of structures
 %% Unique Searchable Variables
-
-
+keyboard
 unique_variables = {};
 for ii = 1 : numel( varargout{1} )
     if isstruct( varargout{1} ) || isnumeric( varargout{1} )
@@ -62,7 +68,7 @@ for ii = 1 : numel( varargout{1} )
     for nn = 1 : numel( newfields )
         
         if ~ismember( newfields{nn}, dskyfld )
-            unreserved(nn) = numel(getfield( GetEl(ii), newfields{nn} )) == 1
+            unreserved(nn) = numel(getfield( GetEl(ii), newfields{nn} )) == 1;
         end
     end
     
@@ -86,7 +92,6 @@ fprintf( fo,'data: \n' );
 
 % variable keys
 kyfld = {'value'};
-
 
 for ii = 1 : numel( varargout{1} )
     if isstruct( varargout{1} ) || isnumeric( varargout{1} )
@@ -166,6 +171,7 @@ for ii = 1 : numel( varargout{1} )
 end
 fprintf(fo, '---\n');
 fclose(fo);
+
 
 end
 
