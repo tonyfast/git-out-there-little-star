@@ -1,9 +1,11 @@
 ---
 layout: bootstrap
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<div class="alert alert-success">
+    
+    {{ post.date | date_to_string }}<h4>    <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }} 
+</a> </h4>
 
-<div class="post">
-{{ content }}
-</div>
+  </div>
+  {{ content }}
+
