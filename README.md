@@ -49,3 +49,6 @@ Currently, this project a basic familiarity with the Git command line.
 
    Use the same syntax that [``publish``](http://www.mathworks.com/help/matlab/ref/publish.html) except replace publish with ``jekyllpublish``.
 
+
+
+## Change the Config file

@@ -1,5 +1,5 @@
 <div class="panel panel-warning">
-    <div class="panel-heading"><h2>Key Value Pairs</h2></div>
+    <div class="panel-heading"><h2>Statistics</h2></div>
     <div class="bs-example">
         <table class="table table-striped">
             <thead>
@@ -21,7 +21,7 @@
                     {% for rows in page.data %}
                     
                     
-                    <td>{{rows.name| default:'Unnamed'}}</td>
+                    <td>{% if rows.name %}{{rows.name}}{% else %} Unnamed {{forloop.index}} {% endif %}</td>
                     {% for cols in page.var %}  
                     <td>
                         {% assign isempty = true %}

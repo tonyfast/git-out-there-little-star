@@ -1,4 +1,5 @@
 # site data can be used by ignore the curly brackets.  the nav-bar template replaces them
+# nav-bar template replaces site.baseurl with {{site.baseurl}}
 brand:
     name: "Git-Out-There-Little-Star"
     ref: "site.baseurl/index.html"

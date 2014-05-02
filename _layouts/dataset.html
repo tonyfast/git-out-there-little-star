@@ -18,24 +18,27 @@ I need to get the unique variables from the matlab execution cause its easier
 
 {% for dset in page.data %}
 <div class="panel panel-primary">
-    <div class="panel-heading"><h2>{{dset.name}}</h2>        
+    <div class="panel-heading"><h2>
+        {% if dset.name %}{{dset.name}}{% else %} Unnamed {{forloop.index}} {% endif %}
+        
+    </h2>        
     </div>
     
     {% if dset.url %}
     <div class="alert alert-info">
-        This dataset has been made avaiable for <a href="{{dset.url}}">(Download)</a>.
+        This dataset has been made available for <a href="{{dset.url}}">(Download)</a>.
     </div>
     {% endif %}
     
     <div class="panel panel-primary"><div class="panel-body">
-            <p>{{dset.comment}}
-                
-                
+            <p>{% if dset.comment %}{{dset.comment}}{% else %}<i> NO DESCRIPTION</i>{% endif %}
             </p>
     </div></div>
     
-    <div class="panel-body">
-        {% include variablenames.html %}
+    <div class="panel-body">    
+        {% if dset.metadata[0].var %}
+            {% include variablenames.html %}
+        {% endif %}
         {% include listimages.html %}
         {% include listlinks.html %}
         
@@ -44,3 +47,7 @@ I need to get the unique variables from the matlab execution cause its easier
     </div>
 </div>
 {% endfor %}
+
+{% if site.data.disqus %}
+    {% include disqus.html %}
+{% endif %}
