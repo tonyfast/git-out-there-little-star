@@ -3,7 +3,7 @@ markdown: redcarpet
 pygments: true
 
 # Modify these values
-url: http://tonyfast.com/
+url: http://localhost:4000
 baseurl: /git-out-there-little-star
 imgbase: /assets
 
