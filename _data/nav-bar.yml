@@ -8,3 +8,5 @@ pages:
     ref: "site.baseurl/views/dataset-index.html"
   - name: Reports
     ref: "site.baseurl/views/report-index.html"
+  - name: Posts
+    ref: "site.baseurl/views/post-index.html"
