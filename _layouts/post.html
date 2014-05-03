@@ -9,3 +9,6 @@ layout: bootstrap
   </div>
   {{ content }}
 
+{% if site.data.accounts.disqus %}
+    {% include disqus.html %}
+{% endif %}
