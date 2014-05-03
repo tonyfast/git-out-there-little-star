@@ -88,6 +88,9 @@ else
 end
 
 
+if ~isdir( '_posts')
+    mkdir('_posts');
+end
 to_file = fullfile( '_posts', sprintf( '%04i-%02i-%02i-%s.html', timenow(1), timenow(2), timenow(3), regexprep( param.title,' ','-') ) );
 
 %% Write pages
