@@ -5,19 +5,22 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
         
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- Bootstrap stuff -->
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{{site.baseurl}}/css/bootstrap.min.css">
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="{{site.baseurl}}/css/bootstrap-theme.min.css">
+        <!--JQUERY-->
+            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         
-        <!-- Latest compiled and minified JavaScript -->
-        <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/bootstrap.min.js"></script>
-        
-        <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script>
+        <!-- Relative image paths are stored in Assets and this javascript changes the image source OnLoad -->
+             <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script>
     </head>
     
     {% include nav-bar.html %}
