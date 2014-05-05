@@ -4,9 +4,10 @@
 
 if ~isdir( './SpatialStatisticsFFT' )
     system('sudo git clone https://github.com/tonyfast/SpatialStatisticsFFT.git');
-    addpath( genpath( './SpatialStatisticsFFT' ) );
 end
 
+addpath( genpath( './SpatialStatisticsFFT' ) );
+mkdir('./assets');
 %% Create a dataset with spatial fields
 
 S.phase = round(checkerboard(10));
