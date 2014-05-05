@@ -2,11 +2,12 @@
 layout: bootstrap
 ---
 
+
 <div class="jumbotron">
     <h1>{{site.user}}</h1>
-    <h2><a href="mailto:{{site.data.accounts.email}}">{{site.data.accounts.email}}</a></h2>
+    <h2><a href="mailto:{{site.email}}">{{site.email}}</a></h2>
     <ul class="list-group">
-        {% for account in site.data.accounts %}
+        {% for account in site %}
         
         {% if account[0] == 'linkedin' %}
          <li class="list-group-item"><h2>
