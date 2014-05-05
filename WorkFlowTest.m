@@ -40,3 +40,5 @@ matinpublish( wrapout, S, 'title', 'Workflow Test Execute' );
 drawnow;
 
 %% Create a Report
+
+matinpublish('example.m','title','Spatial Statistics Tutorial');
