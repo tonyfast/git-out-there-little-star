@@ -73,9 +73,6 @@ addpath( genpath( <span class="string">'./SpatialStatisticsFFT'</span> ) );
 mkdir(<span class="string">'./assets'</span>);
 </pre><pre class="codeoutput">Warning: Directory already exists. 
 </pre><h2>Create a dataset with spatial fields<a name="2"></a></h2><pre class="codeinput">S.phase = round(checkerboard(10));
-</pre><pre class="codeoutput">Warning: Struct field assignment overwrites a value with class "double". See
-MATLAB R14SP2 Release Notes, Assigning Nonstructure Variables As Structures
-Displays Warning, for details. 
 </pre><h2>Compute Spatial Statistics on the phase<a name="3"></a></h2><pre class="codeinput">S.stats = SpatialStatsFFT( S.phase,[],<span class="string">'display'</span>, true );
 
 <span class="comment">% Save the displayed spatial statistics</span>
@@ -93,8 +90,8 @@ ans =
 
     phase: [80x80 double]
     stats: [81x81 double]
-    image: {'testwf-stats-1.png'  'testwf-stats-2.png'}
      name: 'Example dataset when using workflows'
+    image: {'testwf-stats-1.png'  'testwf-stats-2.png'}
 
 </pre><p>wrap the output results</p><pre class="codeinput">S = rmfield( S, <span class="string">'image'</span> );
 
